@@ -1,3 +1,13 @@
+This program is intended to be used with a learning resource like a chapter 
+book. The idea is to randomly choose four end of chapter problems to practice. 
+You enter the number of problems available and the program gives you four 
+random numbers between 1 and your number.
+
+For example, if your chapter has 20 problems available, you input 20 and you 
+will get four numbers between 1 and 20 inclusive.
+
+
+
 Here are the instructions to create an installer on a windows machine:
 
 1. open a command line and navigate to the directory
