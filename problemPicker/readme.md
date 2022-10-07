@@ -8,17 +8,23 @@ will get four numbers between 1 and 20 inclusive.
 
 
 
-Here are the instructions to create an installer on a windows machine:
+Here are the instructions to create an installer on a windows machine using 
+	the included jar file:
 
 1. open a command line and navigate to the directory
 	
 	a. otherwise right click in directory and select "open in terminal"
+
 2. type or copy/pasta: jpackage --app-version 1.3 --win-shortcut --win-console --input . --main-jar FourProblemPicker.jar
 	
 	a. this requires jpackage which is included in later
 		versions of jdk 
 	
 	b. using jpackage requires wixTools
+
+If you want to create your own jar file after modifying the program you can do 
+so with the following command line instruction:
+	jar cvf FourProblemPicker.java FourProblemPicker.class
 
 This will create the installer from the included jar file. Running the installer 
 will create the application in "Program Files" and create a desktop shortcut. 
