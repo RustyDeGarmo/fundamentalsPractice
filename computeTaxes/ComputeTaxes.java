@@ -4,21 +4,33 @@ and income. i.e. filing status single with annual income of 150,000. The
 program will correctly compute how much tax is owed
 */
 
+import java.util.Scanner;
+
 public class ComputeTaxes{
 	public static void main(String[] args){
-		int[] taxInfo = getTaxInformation();
-		
-		calculateTaxes(taxInfo);
+		printUserTaxes();
 	}
 
 	//prompt the user to enter their filing status and annual income
-	public static int[] getTaxInformation(){
-		int[] info = {0, 0};
+	public static FilingInfo getTaxInformation(){
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Enter your filing status: (1-4)\n" + 
+			"1: Single \n2: Married Filing Jointly \n" +
+			"3: Married Filing Seperate \n4: Head of Household");
+
+		int status = input.nextInt();
+
+		System.out.print("Enter your annual income: ");
+
+		double income = input.nextDouble();
+
+		FilingInfo info = new FilingInfo(status, income);
 		return info;
 	}
 
 	//calculate the taxes owed and display the information to the user
-	public static void calculateTaxes(int[] arr){
+	public static void calculateTaxes(){
 		//rates and brackets are for the year 2022
 		double[] taxRates = {0.10, 0.12, 0.22, 0.24, 0.32, 0.35, 0.37};
 
@@ -31,12 +43,15 @@ public class ComputeTaxes{
 			{15700, 59850, 95350, 182100, 231250, 578100}
 		}
 
+		FilingInfo info = getTaxInformation();
 		
-		printUserTaxes(arr);
+		//WORKING HERE
 	}
 
 	//helper method to print the information to the console
-	public static void printUserTaxes(int[] arr){
-		System.out.println(arr.toString());
+	public static void printUserTaxes(){
+		double taxes = calculateTaxes();
+
+		//TODO print formatted tax liability
 	}
 }
