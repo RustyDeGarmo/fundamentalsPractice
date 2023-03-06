@@ -41,7 +41,7 @@ public class ComputeTaxes{
 			{22000, 89450, 190750, 364200, 462500, 693750}, 
 			{11000, 44725, 95375, 182100, 231250, 346875}, 
 			{15700, 59850, 95350, 182100, 231250, 578100}
-		}
+		};
 
 		FilingInfo info = getTaxInformation();
 		
@@ -50,7 +50,7 @@ public class ComputeTaxes{
 
 	//helper method to print the information to the console
 	public static void printUserTaxes(){
-		double taxes = calculateTaxes();
+		//double taxes = calculateTaxes();
 
 		//TODO print formatted tax liability
 	}

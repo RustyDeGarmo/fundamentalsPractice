@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         //check if input is valid
