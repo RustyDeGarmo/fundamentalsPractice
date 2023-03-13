@@ -24,6 +24,8 @@ public class PrintCalendar{
 
 		printMonth(year, month);
 
+        input.close();
+
 	}
 
 	public static void printMonth(int year, int month){

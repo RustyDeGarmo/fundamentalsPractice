@@ -3,8 +3,6 @@
     year. Tested with printing the number of days in the years 2000 to 2020.
 */
 
-import java.util.Scanner;
-
 public class NumberOfDaysInYear{
     public static void main(String[] args){
     

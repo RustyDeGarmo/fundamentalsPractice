@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class Solution{
     public int lengthOfLongestSubstring(String s) {
         //check if input is valid
         if(s == null || s.length() == 0) return 0;

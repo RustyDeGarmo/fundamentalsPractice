@@ -37,6 +37,7 @@ public class ReverseArray{
 			inputArray[i] = input.nextInt();
 		}
 
+        input.close();
 		return inputArray;
 	}
 

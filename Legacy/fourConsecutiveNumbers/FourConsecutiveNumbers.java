@@ -40,19 +40,20 @@ public class FourConsecutiveNumbers{
 	}
 
 	public static int[] populateList(){
-		Scanner input = new Scanner(System.in);
+		
+		try(Scanner input = new Scanner(System.in);){
+                System.out.println("Enter how many integers you'll enter: ");
 
-		System.out.println("Enter how many integers you'll enter: ");
+                int size = input.nextInt();
+                int[] values = new int[size];
 
-		int size = input.nextInt();
-		int[] values = new int[size];
+                System.out.println("Enter the integers: ");
 
-		System.out.println("Enter the integers: ");
+                for(int i = 0; i < size; i++){
+                    values[i] = input.nextInt();
+                }
 
-		for(int i = 0; i < size; i++){
-			values[i] = input.nextInt();
-		}
-
-		return values;
+                return values;
+        }
 	}
 }

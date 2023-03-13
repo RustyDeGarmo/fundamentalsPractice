@@ -27,14 +27,16 @@ public class PentagonalNumbers{
             System.out.println("getPentagonalNumber isn't working correctly");
         }
 
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter a value to print it's pentagonal number: ");
+        
+        try(Scanner input = new Scanner(System.in);){
+            System.out.print("Enter a value to print it's pentagonal number: ");
         int userNumber = input.nextInt();
 
         System.out.println("The pentagonal number for " + userNumber + 
             " is " + getPentagonalNumber(userNumber));
 
         testPentagonalNumber();
+        }
 
     }
 

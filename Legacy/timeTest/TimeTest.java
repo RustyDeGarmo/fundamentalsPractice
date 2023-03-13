@@ -42,7 +42,7 @@ public class TimeTest{
 		System.out.println("The execution time for linear search is " + 
 			executionTime + " milliseconds");
 
-		return -1;
+		return index;
 	}
 
 

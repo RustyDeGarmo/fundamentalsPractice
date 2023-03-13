@@ -26,5 +26,6 @@ class Solution {
         System.out.println("\nYour savings balance after six months is: " + 
             savings);
 
+        input.close();
     }
 }

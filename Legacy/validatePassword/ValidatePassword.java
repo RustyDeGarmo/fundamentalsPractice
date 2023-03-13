@@ -9,23 +9,24 @@ import java.util.Scanner;
 
 public class ValidatePassword{
     public static void main(String[] args){
-    //test values: one should pass two should fail three should fail
-    String passOne = "1sometexthere2";
-    String passTwo = "123text";
-    String passThree = "@124sometext";
+        //test values: one should pass two should fail three should fail
+        // String passOne = "1sometexthere2";
+        // String passTwo = "123text";
+        // String passThree = "@124sometext";
 
-//    System.out.println("Test passwords: ");
-//    testPassword(passOne);
-//    testPassword(passTwo);
-//    testPassword(passThree);
+    //    System.out.println("Test passwords: ");
+    //    testPassword(passOne);
+    //    testPassword(passTwo);
+    //    testPassword(passThree);
 
-    Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
-    System.out.println("Enter your password: ");
-    String userPassword = input.nextLine();
+        System.out.println("Enter your password: ");
+        String userPassword = input.nextLine();
 
-    testPassword(userPassword);
+        testPassword(userPassword);
 
+        input.close();    
     }
 
     public static void testPassword(String pass){

@@ -9,18 +9,20 @@ public class PrintArrayReverse{
 	public static void main(String[] args){
 		System.out.println("Enter 10 integers: ");
 
-		Scanner input = new Scanner(System.in);
+		try(Scanner input = new Scanner(System.in);){
+            
+            int[] arr = new int[10];
 
-		int[] arr = new int[10];
+            for(int i = 0; i < arr.length; i++){
+                arr[i] = input.nextInt();
+            }
 
-		for(int i = 0; i < arr.length; i++){
-			arr[i] = input.nextInt();
+            System.out.println("Your integers reversed are: "); 
+
+            for(int i = arr.length - 1; i >= 0; i--){
+                System.out.print(arr[i]);
 		}
+        }
 
-		System.out.println("Your integers reversed are: "); 
-
-		for(int i = arr.length - 1; i >= 0; i--){
-			System.out.print(arr[i]);
-		}
 	}
 }

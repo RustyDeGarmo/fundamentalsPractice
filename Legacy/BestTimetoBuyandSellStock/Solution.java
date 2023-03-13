@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-class Solution {
+class Solution{
     public int maxProfit(int[] prices) {
         
         //Need at least one loop to iterate the array
