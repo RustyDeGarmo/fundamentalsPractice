@@ -70,7 +70,7 @@ public class TestCCValidation {
 
     public static void testGetPrefix(){
         System.out.println("Testing getPrefix");
-        CCValidation.getPrefix(1234567L, 12);
+        System.out.println("This should be 12: " + CCValidation.getPrefix(1234567L, 12));
         System.out.println();
     }
 }

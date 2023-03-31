@@ -25,8 +25,8 @@ package chapter6;
     public static int sumOfDoubleEvenPlace(long number){
         String num = String.valueOf(number);
         int sum = 0;
-        for(int i = num.length() -2; i <= 0; i -= 2){
-            sum += getDigit((int)num.charAt(i));
+        for(int i = num.length() -2; i >= 0; i -= 2){
+            sum += getDigit(Character.getNumericValue(num.charAt(i)) * 2);
         }
 
         return sum;
