@@ -6,18 +6,51 @@ package chapter6;
  * 
  */
 
- class CCValidation{
-    public static void main(String[] args){
+import java.util.*;
 
+class CCValidation{
+    public static void main(String[] args){
+        try(Scanner input = new Scanner(System.in)){
+            System.out.print("Enter your card number: ");
+            long number = input.nextLong();
+            boolean valid = isValid(number);
+            
+            if(valid){
+                System.out.println("The card is valid");
+            }else{
+                System.out.println("The card is not valid");
+            }
+        }
     }
 
     // Return true if the card number is valid
     public static boolean isValid(long number){
-        //TODO
+        String cardCompany = "";
+        int sum = sumOfDoubleEvenPlace(number) + sumOfOddPlace(number);
+        
+        if(getSize(number) >= 13 && getSize(number) <= 16 && sum % 10 == 0){
+            //could use a switch here instead of if/else chain
+            if(prefixMatched(number, 4)){
+                cardCompany = "Visa";
+            }else if(prefixMatched(number, 5)){
+                cardCompany = "Mastercard";
+            }else if(prefixMatched(number, 6)){
+                cardCompany = "Discover";
+            }else if(prefixMatched(number, 37)){
+                cardCompany = "American Express";
+            }else{
+                return false;            
+            }
 
-        return false;
+            System.out.println("The card is a: " + cardCompany);
+
+        }else{
+            return false;
+        }
+
+        return true;
     }
-
+    
     /* 
      * Sum every other number starting with the second from the right
      * and moving left. If the number is two digits, sum those digits.
@@ -42,10 +75,8 @@ package chapter6;
         if(num.length() == 1){
             return number;
         }else{
-            int indexZero = Character.getNumericValue(num.charAt(0));
-            int indexOne = Character.getNumericValue(num.charAt(1));
-
-            return indexZero + indexOne;
+            return Character.getNumericValue(num.charAt(0)) + 
+                Character.getNumericValue(num.charAt(1));
         }
     }
 
@@ -54,9 +85,13 @@ package chapter6;
      * and moving right to left
      */
     public static int sumOfOddPlace(long number){
-        //TODO
+        String num = String.valueOf(number);
+        int sum = 0;
+        for(int i = num.length() -1; i >= 0; i -= 2){
+            sum += getDigit(Character.getNumericValue(num.charAt(i)));
+        }
 
-        return 0;
+        return sum;
     }
 
     // Return true if the number d is a prefix for number
@@ -83,4 +118,4 @@ package chapter6;
             return Integer.parseInt(numString.substring(0, k));
         }        
     }
- }
+}
