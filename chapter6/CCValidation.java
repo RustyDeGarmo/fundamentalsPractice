@@ -75,8 +75,12 @@ package chapter6;
      * return number.
      */
     public static long getPrefix(long number, int k){
-        //TODO
+        String numString = String.valueOf(number);
 
-        return 0;
+        if(numString.length() < k){
+            return number;
+        }else{
+            return Integer.parseInt(numString.substring(0, k));
+        }        
     }
  }
