@@ -11,6 +11,30 @@ public class TestTicTacToe {
     public static void main(String[] args){
         testGameOver();
         testPlayerTurn();
+        testDisplayBoard();
+    }
+
+    public static void testDisplayBoard(){
+        char[][] board = {
+            {' ', ' ', ' '},
+            {' ', ' ', ' '},
+            {' ', ' ', ' '}
+        };
+        System.out.println();
+        System.out.println("Empty Board");
+        TicTacToe.displayBoard(board);
+
+        System.out.println();
+        System.out.println("row 2 column 0 is X");
+        board[2][0] = 'X';
+        TicTacToe.displayBoard(board);
+        System.out.println();
+
+        System.out.println();
+        System.out.println("row 2 column 1 is O");
+        board[2][1] = 'O';
+        TicTacToe.displayBoard(board);
+        System.out.println();
     }
 
     public static void testPlayerTurn(){

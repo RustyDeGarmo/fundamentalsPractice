@@ -76,6 +76,8 @@ public class TicTacToe {
                 return false;
             }
         }
+
+        //the board is full
         System.out.println("Cat Game. No moves left.");
         return true;
     }
