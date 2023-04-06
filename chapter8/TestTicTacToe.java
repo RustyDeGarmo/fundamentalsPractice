@@ -7,14 +7,13 @@ package chapter8;
 import java.util.*;
 
 public class TestTicTacToe {
+    static Scanner input = new Scanner(System.in);
     public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
-
         testGameOver();
-        testPlayerTurn(input);
+        testPlayerTurn();
     }
 
-    public static void testPlayerTurn(Scanner input){
+    public static void testPlayerTurn(){
         System.out.println("Testing playerTurn()");
         char[][] board = {
             {' ', ' ', ' '},
@@ -24,14 +23,14 @@ public class TestTicTacToe {
         char player = 'X';
 
         System.out.println("Choose any cell. All are empty");
-        TicTacToe.playerTurn(board, player, input);
+        TicTacToe.playerTurn(board, player);
         TicTacToe.displayBoard(board);
         System.out.println();
 
         board[2][0] = player;
 
         System.out.println("Choose row 2, column 0. Cell already taken");
-        TicTacToe.playerTurn(board, player, input);
+        TicTacToe.playerTurn(board, player);
         TicTacToe.displayBoard(board);
         System.out.println();
         System.out.println();

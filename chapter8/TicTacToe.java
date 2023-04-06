@@ -8,9 +8,8 @@ package chapter8;
 import java.util.*;
 
 public class TicTacToe {
+    static Scanner input = new Scanner(System.in);
     public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
-
         char[][] board = new char[3][3];
         char player = 'X';
         int turn = 1;
@@ -26,7 +25,7 @@ public class TicTacToe {
             }
 
             displayBoard(board);
-            playerTurn(board, player, input);
+            playerTurn(board, player);
 
             turn++;
         }
@@ -87,7 +86,7 @@ public class TicTacToe {
     }
 
     //prompt a player for input
-    static void playerTurn(char[][] board, char player, Scanner input){
+    static void playerTurn(char[][] board, char player){
         System.out.println("Player " + player + "'s turn");
 
         
@@ -97,14 +96,18 @@ public class TicTacToe {
         System.out.print("Enter a column: ");
         int column = input.nextInt();
 
+        if(row > 2 || row < 0 || column < 0 || column > 2){
+            System.out.println("Invalid input. Choose between 0 and 2");
+            playerTurn(board, player);
+        }
+
         if(board[row][column] != 'X' && board[row][column] != 'O'){
             board[row][column] = player;
         }else{
             System.out.println("That cell is already taken, try again");
             System.out.println();
-            playerTurn(board, player, input);
+            playerTurn(board, player);
         }
-
-        
+        System.out.println();
     }
 }
