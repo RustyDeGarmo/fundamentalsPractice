@@ -18,23 +18,29 @@ public class TicTacToe {
         //initialize the player and turn counter
         char player = 'X';
         int turn = 1;
+        int playAgain = 1;
 
         //establish game loop
-        while(!gameOver(board)){
+        while(playAgain != 0){
+            while(!gameOver(board)){
             
 
-            if(turn % 2 == 0){
-                player = 'O';
-            }else{
-                player = 'X';
+                if(turn % 2 == 0){
+                    player = 'O';
+                }else{
+                    player = 'X';
+                }
+    
+                displayBoard(board);
+                playerTurn(board, player);
+    
+                turn++;
             }
-
-            displayBoard(board);
-            playerTurn(board, player);
-
-            turn++;
+            System.out.println(turn + " turns played");
+            System.out.print("Play again? Enter 0 to end the game");
+            playAgain = input.nextInt();
         }
-        System.out.println(turn + " turns played");
+        
         input.close();
     }
 
