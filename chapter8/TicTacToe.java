@@ -37,8 +37,13 @@ public class TicTacToe {
                 turn++;
             }
             System.out.println(turn + " turns played");
-            System.out.print("Play again? Enter 0 to end the game");
+            System.out.print("Play again? Enter 0 to end the game ");
             playAgain = input.nextInt();
+            //reset the board and counter if the players keep playing
+            for(int i = 0; i < board.length; i++){
+                Arrays.fill(board[i], ' ');
+            }
+            turn = 1;
         }
         
         input.close();
