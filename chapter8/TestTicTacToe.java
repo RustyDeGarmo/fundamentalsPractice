@@ -1,8 +1,40 @@
 package chapter8;
 
+/*
+ * This program tests the methods in TicTacToe
+ */
+
+import java.util.*;
+
 public class TestTicTacToe {
     public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+
         testGameOver();
+        testPlayerTurn(input);
+    }
+
+    public static void testPlayerTurn(Scanner input){
+        System.out.println("Testing playerTurn()");
+        char[][] board = {
+            {' ', ' ', ' '},
+            {' ', ' ', ' '},
+            {' ', ' ', ' '}
+        };
+        char player = 'X';
+
+        System.out.println("Choose any cell. All are empty");
+        TicTacToe.playerTurn(board, player, input);
+        TicTacToe.displayBoard(board);
+        System.out.println();
+
+        board[2][0] = player;
+
+        System.out.println("Choose row 2, column 0. Cell already taken");
+        TicTacToe.playerTurn(board, player, input);
+        TicTacToe.displayBoard(board);
+        System.out.println();
+        System.out.println();
     }
 
     public static void testGameOver(){
@@ -45,6 +77,7 @@ public class TestTicTacToe {
             {'X', 'O', 'O'}
         };
         TicTacToe.gameOver(board4);
+        System.out.println();
         System.out.println();
     }
 }

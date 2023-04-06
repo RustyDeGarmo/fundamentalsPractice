@@ -4,14 +4,34 @@ package chapter8;
  * This program draws a classic tic-tac-toe board and lets two players 
  * play the game.
  */
+
+import java.util.*;
+
 public class TicTacToe {
     public static void main(String[] args){
-        char[][] board = new char[3][3];
-        
-        //establish game loop
-        while(gameOver(board)){
+        Scanner input = new Scanner(System.in);
 
+        char[][] board = new char[3][3];
+        char player = 'X';
+        int turn = 1;
+
+        //establish game loop
+        while(!gameOver(board)){
+            
+
+            if(turn % 2 == 0){
+                player = 'O';
+            }else{
+                player = 'X';
+            }
+
+            displayBoard(board);
+            playerTurn(board, player, input);
+
+            turn++;
         }
+        System.out.println(turn + " turns played");
+        input.close();
     }
 
     //check for game over condition
@@ -57,7 +77,7 @@ public class TicTacToe {
                 return false;
             }
         }
-        System.out.println("Cat Game");
+        System.out.println("Cat Game. No moves left.");
         return true;
     }
 
@@ -67,7 +87,24 @@ public class TicTacToe {
     }
 
     //prompt a player for input
-    static void playerTurn(char[][] board){
+    static void playerTurn(char[][] board, char player, Scanner input){
+        System.out.println("Player " + player + "'s turn");
 
+        
+            
+        System.out.print("Enter a row: ");
+        int row = input.nextInt();
+        System.out.print("Enter a column: ");
+        int column = input.nextInt();
+
+        if(board[row][column] != 'X' && board[row][column] != 'O'){
+            board[row][column] = player;
+        }else{
+            System.out.println("That cell is already taken, try again");
+            System.out.println();
+            playerTurn(board, player, input);
+        }
+
+        
     }
 }
