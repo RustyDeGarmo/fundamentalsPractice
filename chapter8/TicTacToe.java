@@ -10,7 +10,12 @@ import java.util.*;
 public class TicTacToe {
     static Scanner input = new Scanner(System.in);
     public static void main(String[] args){
+        //create the board and fill it with empty spaces
         char[][] board = new char[3][3];
+        for(int i = 0; i < board.length; i++){
+            Arrays.fill(board[i], ' ');
+        }
+        //initialize the player and turn counter
         char player = 'X';
         int turn = 1;
 
@@ -84,7 +89,20 @@ public class TicTacToe {
 
     //display the game board
     static void displayBoard(char[][] board){
-        
+
+        //print the column headers
+        System.out.println("    0   1   2");
+        //print the top border
+        System.out.println("---------------");
+
+        //print the rows
+        for(int i = 0; i < board.length; i++){
+            System.out.println(i + " | " + board[i][0] + " | " + board[i][1] + 
+                " | " + board[i][2] + " |");
+            System.out.println("---------------");
+        }
+
+        System.out.println();//space
     }
 
     //prompt a player for input

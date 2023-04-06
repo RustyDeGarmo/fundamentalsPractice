@@ -10,8 +10,9 @@ public class TestTicTacToe {
     static Scanner input = new Scanner(System.in);
     public static void main(String[] args){
         testGameOver();
-        testPlayerTurn();
         testDisplayBoard();
+        testPlayerTurn();
+        
     }
 
     public static void testDisplayBoard(){
