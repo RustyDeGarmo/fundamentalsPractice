@@ -13,7 +13,7 @@ public class TicTacToe {
         //create the board and fill it with empty spaces
         char[][] board = new char[3][3];
         for(int i = 0; i < board.length; i++){
-            Arrays.fill(board[i], ' ');
+            Arrays.fill(board[i], ' '); //use single quotes for char
         }
         //initialize the player and turn counter
         char player = 'X';
