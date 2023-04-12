@@ -5,25 +5,27 @@ package chapter9;
  * It is both equilateral and equiangular.
  */
 public class RegularPolygon {
-    private int n = 3;//number of sides
-    private double side = 1;//length of a side
-    private double x = 0;//x coordinate
-    private double y = 0;//y coordinate
+    private int n = 3; //number of sides
+    private double side = 1; //length of a side
+    private double x = 0; //x coordinate
+    private double y = 0; //y coordinate
 
     //no arg constructor that creates a regular polygon with defaults
-    RegularPolygon(){
-
-    }
+    RegularPolygon(){}
 
     //constructor that creates a regular polygon with specified number of 
-    //sides and length of side, but is centerred at default (0, 0)
+    //sides and length of side, but is centered at default (0, 0)
     RegularPolygon(int n, double side){
-
+        this.n = n;
+        this.side = side;
     }
 
     //constructor that creates a regular polygon with all values specified
     RegularPolygon(int n, double side, double x, double y){
-
+        this.n = n;
+        this.side = side;
+        this.x = x;
+        this.y = y;
     }
 
     public int getN(){
@@ -65,8 +67,7 @@ public class RegularPolygon {
 
     //method to return the area
     public double getArea(){
-
-        return 0;
+        return (n * (side * side))/(4 * (Math.tan(Math.PI / n)));
     }
 
 }
