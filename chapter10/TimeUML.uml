@@ -1,0 +1,18 @@
+Class: Time
+
+Data Fields:
+hour: int
+minute: int
+second: int
+
+Constructors:
+Time()
+Time(elapsedTime: long)
+Time(hour: int, minute: int, second: int)
+
+Methods:
+getHour(): int
+getMinute(): int
+getSecond(): int
+setTime(elapsedTime: long)
+
