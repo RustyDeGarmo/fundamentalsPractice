@@ -45,6 +45,7 @@ public class Course {
     public void dropStudent(String student){
         //remove a student from the course
         int index = 0;
+        String[] newStudents = new String[students.length - 1];
 
         for(int i = 0; i < students.length; i++){
             if(students[i] == student){
@@ -54,10 +55,10 @@ public class Course {
         }
         //shift remaining students
         for(int i = index; i < students.length - 1; i++){
-            students[i] = students[i+1];
+            newStudents[i] = students[i+1];
             students[i+1] = " "; //prevent the last student from being a duplicate
         }
-
+        numberOfStudents--;
     }
     
     public void clear(){
