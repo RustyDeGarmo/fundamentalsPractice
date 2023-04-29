@@ -17,7 +17,7 @@ public class ChainedExceptions {
         try{
             method2();
         }catch(Exception ex){
-            throw new Exception("New info from method1", ex);
+            throw new Exception("New info from method1");
         }
     }
     
