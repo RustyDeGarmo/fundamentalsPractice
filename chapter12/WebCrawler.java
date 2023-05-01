@@ -55,7 +55,7 @@ public class WebCrawler {
                         list.add(line.substring(current, endIndex));
                         current = line.indexOf("https://", endIndex);
                     }else{
-                        current = -1;
+                        current = -1;//no url found in the current line
                     }
                 }
             }
