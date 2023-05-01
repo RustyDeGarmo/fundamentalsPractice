@@ -24,7 +24,7 @@ public class MismatchTest {
                 y = input.nextInt();
                 sum = x + y;
             }catch(InputMismatchException ex){
-                System.out.println("Invalid input. Valid input e.g. 1, 2, 3 etc. ");
+                System.out.println("Invalid input. Valid integers are 1, 2, 3 etc. ");
                 sum = sumInts();
             }
             

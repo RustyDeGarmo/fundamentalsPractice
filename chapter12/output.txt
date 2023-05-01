@@ -1,0 +1,5 @@
+Hello, my name is . This is a test text document to be used with a program that removes some given text from the document. I might ask the program to remove my name, . 
+Or maybe I'll ask it to remove the word text from the document. Or heck, maybe even the word document. Or I could remove the word remove.
+Once again, my name is .
+
+
