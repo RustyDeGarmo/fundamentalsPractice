@@ -6,7 +6,7 @@ package chapter13;
 
 import java.util.*;
 
-public class ConvertDecimalToFraction {
+public class TestDecimal {
     public static void main(String[] args){
         //prompt the user to input a decimal 
         //then display the number as a fraction
@@ -38,20 +38,19 @@ public class ConvertDecimalToFraction {
         for(int i = 1; i < decimalSize; i++){
             multiple *= 10;
         }
-        long numerator = (long)(Math.round((decimalPart * multiple))) + 
-            (intPart * multiple);
+        long numerator = ((long)(decimalPart * multiple)) + (intPart * multiple);
         long denominator = 1 * multiple;
         Rational fraction = new Rational(numerator, denominator);
         
 
         //print statements for testing
-        // System.out.println("The decimal string is: " + decimalString);
-        // System.out.println("The int part is: " + intPart);
-        // System.out.println("The decimal part is: " + decimalPart);
-        // System.out.println("The size of the decimal part is: " + decimalSize);
-        // System.out.println("The multiple is: " + multiple);
-        // System.out.println("The numerator is: " + numerator);
-        // System.out.println("The denominator is: " + denominator);
+        System.out.println("The decimal string is: " + decimalString);
+        System.out.println("The int part is: " + intPart);
+        System.out.println("The decimal part is: " + decimalPart);
+        System.out.println("The size of the decimal part is: " + decimalSize);
+        System.out.println("The multiple is: " + multiple);
+        System.out.println("The numerator is: " + numerator);
+        System.out.println("The denominator is: " + denominator);
 
         return fraction;
     }
