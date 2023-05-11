@@ -1,5 +1,8 @@
 package chapter13;
-
+/*
+ * This class creates rational numbers and provides methods to perform 
+ * basic arithmetic with them
+ */
 public class Rational extends Number implements Comparable<Rational> {
     private long numerator = 0;
     private long denominator = 1; //don't divide by zero :p
@@ -54,7 +57,7 @@ public class Rational extends Number implements Comparable<Rational> {
         return new Rational(numer, denom);
     }
 
-    public long gcd(long n1, long n2){
+    private static long gcd(long n1, long n2){
         long num1 = Math.abs(n1);
         long num2 = Math.abs(n2);
         
