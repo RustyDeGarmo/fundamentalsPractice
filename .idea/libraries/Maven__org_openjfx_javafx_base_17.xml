@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Maven: org.openjfx:javafx-base:17">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/17/javafx-base-17.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/17/javafx-base-17-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/17/javafx-base-17-sources.jar!/" />
+      <root url="file://C:/Java/javafx-sdk-17.0.7" />
+    </SOURCES>
+    <jarDirectory url="file://C:/Java/javafx-sdk-17.0.7" recursive="false" type="SOURCES" />
+  </library>
+</component>
